@@ -1,0 +1,13 @@
+[build]
+command = "pnpm build"
+output_dir = "out"
+
+[env.production]
+node_compat = true
+compatibility_date = "2023-08-01"
+
+[site]
+bucket = "./out"
+
+[build.environment]
+NODE_VERSION = "20.10.0" 
