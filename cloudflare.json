@@ -1,0 +1,8 @@
+{
+  "node_version": "20.10.0",
+  "build_command": "pnpm build",
+  "build_output_directory": "out",
+  "environment_variables": {
+    "NODE_VERSION": "20.10.0"
+  }
+} 
