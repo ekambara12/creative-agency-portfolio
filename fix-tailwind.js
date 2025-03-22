@@ -22,7 +22,6 @@ const classUpdates = {
   // Basic colors
   'bg-background': 'bg-background-DEFAULT',
   'text-foreground': 'text-foreground-DEFAULT',
-  'border-border': 'border-border-DEFAULT',
   
   // Primary
   'text-primary': 'text-primary-DEFAULT',
@@ -89,10 +88,6 @@ const classUpdates = {
 // Additional class patterns that might appear in template literals or className expressions
 const classPatterns = [
   { 
-    pattern: /(\w+:)?border-(border)(?!-DEFAULT)/g, 
-    replacement: '$1border-$2-DEFAULT' 
-  },
-  { 
     pattern: /(\w+:)?bg-(background|primary|secondary|accent|muted|destructive|card|popover|input)(?!-DEFAULT|-foreground)/g,
     replacement: '$1bg-$2-DEFAULT' 
   },
@@ -112,6 +107,14 @@ const classPatterns = [
     pattern: /(\w+:)?ring-(primary|secondary|accent|ring)(?!-DEFAULT|-foreground)/g,
     replacement: '$1ring-$2-DEFAULT' 
   },
+  {
+    pattern: /border-border-DEFAULT/g,
+    replacement: 'border-[hsl(var(--border))]'
+  },
+  {
+    pattern: /border border-border-DEFAULT\/50/g,
+    replacement: 'border border-[hsl(var(--border))]'
+  }
 ];
 
 // Fix all CSS class references in the codebase
