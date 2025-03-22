@@ -8,8 +8,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
-    "cloudflare:build": "next build",
+    "build": "pnpm add @tailwindcss/postcss && next build",
+    "cloudflare:build": "pnpm add @tailwindcss/postcss && next build",
     "start": "next start",
     "lint": "next lint"
   },
