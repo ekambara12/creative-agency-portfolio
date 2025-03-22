@@ -1,5 +1,5 @@
 [build]
-command = "pnpm build"
+command = "node fix-tailwind.js && npm run build"
 output_dir = "out"
 
 [env.production]
