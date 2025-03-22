@@ -95,6 +95,93 @@ module.exports = {
         },
         '.border-border-DEFAULT\\/50': {
           'border-color': 'hsl(var(--border) / 0.5)'
+        },
+        '.bg-background-DEFAULT': {
+          'background-color': 'hsl(var(--background))'
+        },
+        '.bg-primary-DEFAULT': {
+          'background-color': 'hsl(var(--primary))'
+        },
+        '.bg-secondary-DEFAULT': {
+          'background-color': 'hsl(var(--secondary))'
+        },
+        '.bg-accent-DEFAULT': {
+          'background-color': 'hsl(var(--accent))'
+        },
+        '.bg-muted-DEFAULT': {
+          'background-color': 'hsl(var(--muted))'
+        },
+        '.bg-destructive-DEFAULT': {
+          'background-color': 'hsl(var(--destructive))'
+        },
+        '.bg-card-DEFAULT': {
+          'background-color': 'hsl(var(--card))'
+        },
+        '.bg-popover-DEFAULT': {
+          'background-color': 'hsl(var(--popover))'
+        },
+        '.text-foreground-DEFAULT': {
+          'color': 'hsl(var(--foreground))'
+        },
+        '.text-primary-DEFAULT': {
+          'color': 'hsl(var(--primary))'
+        },
+        '.text-secondary-DEFAULT': {
+          'color': 'hsl(var(--secondary))'
+        },
+        '.text-accent-DEFAULT': {
+          'color': 'hsl(var(--accent))'
+        },
+        '.text-muted-DEFAULT': {
+          'color': 'hsl(var(--muted))'
+        },
+        '.text-destructive-DEFAULT': {
+          'color': 'hsl(var(--destructive))'
+        },
+        '.text-card-DEFAULT': {
+          'color': 'hsl(var(--card))'
+        },
+        '.text-popover-DEFAULT': {
+          'color': 'hsl(var(--popover))'
+        },
+        '.from-background-DEFAULT': {
+          '--tw-gradient-from': 'hsl(var(--background)) var(--tw-gradient-from-position)',
+          '--tw-gradient-to': 'hsl(var(--background) / 0) var(--tw-gradient-to-position)',
+          '--tw-gradient-stops': 'var(--tw-gradient-from), var(--tw-gradient-to)'
+        },
+        '.from-primary-DEFAULT': {
+          '--tw-gradient-from': 'hsl(var(--primary)) var(--tw-gradient-from-position)',
+          '--tw-gradient-to': 'hsl(var(--primary) / 0) var(--tw-gradient-to-position)',
+          '--tw-gradient-stops': 'var(--tw-gradient-from), var(--tw-gradient-to)'
+        },
+        '.from-secondary-DEFAULT': {
+          '--tw-gradient-from': 'hsl(var(--secondary)) var(--tw-gradient-from-position)',
+          '--tw-gradient-to': 'hsl(var(--secondary) / 0) var(--tw-gradient-to-position)',
+          '--tw-gradient-stops': 'var(--tw-gradient-from), var(--tw-gradient-to)'
+        },
+        '.to-background-DEFAULT': {
+          '--tw-gradient-to': 'hsl(var(--background)) var(--tw-gradient-to-position)'
+        },
+        '.to-primary-DEFAULT': {
+          '--tw-gradient-to': 'hsl(var(--primary)) var(--tw-gradient-to-position)'
+        },
+        '.to-secondary-DEFAULT': {
+          '--tw-gradient-to': 'hsl(var(--secondary)) var(--tw-gradient-to-position)'
+        },
+        '.to-secondary-DEFAULT\\/50': {
+          '--tw-gradient-to': 'hsl(var(--secondary) / 0.5) var(--tw-gradient-to-position)'
+        },
+        '.to-secondary-DEFAULT\\/20': {
+          '--tw-gradient-to': 'hsl(var(--secondary) / 0.2) var(--tw-gradient-to-position)'
+        },
+        '.ring-primary-DEFAULT': {
+          '--tw-ring-color': 'hsl(var(--primary))'
+        },
+        '.ring-secondary-DEFAULT': {
+          '--tw-ring-color': 'hsl(var(--secondary))'
+        },
+        '.focus\\:ring-secondary-DEFAULT:focus': {
+          '--tw-ring-color': 'hsl(var(--secondary))'
         }
       });
     }
