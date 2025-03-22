@@ -3,7 +3,7 @@ compatibility_date = "2023-12-01"
 node_compat = true
 
 [build]
-command = "node fix-tailwind.js && npm run build"
+command = "npm run build"
 pages_build_output_dir = ".next"
 
 [site]
