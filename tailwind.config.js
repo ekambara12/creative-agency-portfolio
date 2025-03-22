@@ -87,5 +87,17 @@ module.exports = {
       },
     },
   },
+  plugins: [
+    function({ addUtilities }) {
+      addUtilities({
+        '.border-border-DEFAULT': {
+          'border-color': 'hsl(var(--border))'
+        },
+        '.border-border-DEFAULT\\/50': {
+          'border-color': 'hsl(var(--border) / 0.5)'
+        }
+      });
+    }
+  ]
 }
 
