@@ -2,7 +2,7 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/ekambara12/creative-agency-portfolio.git",
+  "homepage": "https://ekambara12.github.io/creative-agency-portfolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
