@@ -1,13 +1,13 @@
+name = "creative-agency-portfolio"
+compatibility_date = "2023-12-01"
+node_compat = true
+
 [build]
 command = "node fix-tailwind.js && npm run build"
-output_dir = "out"
-
-[env.production]
-node_compat = true
-compatibility_date = "2023-08-01"
+pages_build_output_dir = ".next"
 
 [site]
-bucket = "./out"
+bucket = ".next"
 
 [build.environment]
 NODE_VERSION = "20.10.0" 

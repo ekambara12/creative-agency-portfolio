@@ -55,10 +55,10 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border-DEFAULT;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background-DEFAULT text-foreground-DEFAULT;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
   h1,
