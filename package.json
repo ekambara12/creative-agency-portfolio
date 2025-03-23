@@ -9,9 +9,7 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node fix-tailwind.js",
-    "build": "pnpm add @tailwindcss/postcss && next build",
-    "export": "next export",
-    "predeploy": "npm run build && npm run export",
+    "build": "next build",
     "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
