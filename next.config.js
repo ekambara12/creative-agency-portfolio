@@ -4,8 +4,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/creative-agency-portfolio' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/creative-agency-portfolio' : '',
   trailingSlash: true,
 }
 
