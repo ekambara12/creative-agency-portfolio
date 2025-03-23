@@ -3,11 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Creative Agency Portfolio - Site Under Maintenance">
-  <title>Site Under Maintenance</title>
+  <meta name="description" content="Creative Agency Portfolio - Professional digital services">
+  <title>Creative Agency Portfolio</title>
   <style>
     :root {
       --primary: #0070f3;
+      --secondary: #6d28d9;
+      --accent: #f59e0b;
       --background: #ffffff;
       --text: #333333;
       --gray-light: #f3f4f6;
@@ -25,81 +27,332 @@
       line-height: 1.6;
       color: var(--text);
       background-color: var(--background);
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      text-align: center;
-      padding: 2rem;
     }
     
-    .maintenance-container {
-      max-width: 600px;
-    }
-    
-    h1 {
-      font-size: 2.5rem;
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.2;
       margin-bottom: 1rem;
-      color: var(--primary);
     }
     
     p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    a:hover {
+      color: var(--secondary);
+    }
+    
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+    
+    header {
+      padding: 2rem 0;
+      background-color: var(--background);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
     
     .logo {
-      margin-bottom: 2rem;
       font-size: 1.5rem;
       font-weight: 700;
+      color: var(--text);
     }
     
-    .maintenance-icon {
-      width: 100px;
-      height: 100px;
-      margin-bottom: 2rem;
+    .nav-links {
+      display: flex;
+      gap: 2rem;
     }
     
-    .spinner {
-      border: 4px solid rgba(0, 0, 0, 0.1);
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      border-left-color: var(--primary);
-      margin: 2rem auto;
-      animation: spin 1s linear infinite;
+    .nav-links a {
+      color: var(--text);
+      font-weight: 500;
     }
     
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
+    .nav-links a:hover {
+      color: var(--primary);
     }
     
-    .footer {
-      margin-top: 3rem;
+    .hero {
+      padding: 6rem 0;
+      background: linear-gradient(to right, var(--gray-light), var(--background));
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .hero p {
+      font-size: 1.25rem;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+      color: var(--text);
+    }
+    
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--primary);
+      color: white;
+      border-radius: 0.375rem;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+    
+    .btn:hover {
+      background-color: var(--secondary);
+      color: white;
+    }
+    
+    .section {
+      padding: 5rem 0;
+    }
+    
+    .section-title {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    
+    .service-card {
+      background-color: var(--gray-light);
+      border-radius: 0.5rem;
+      padding: 2rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+    
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .about {
+      background-color: var(--gray-light);
+    }
+    
+    .about-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+    
+    .about-text h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    footer {
+      background-color: #1f2937;
+      color: white;
+      padding: 3rem 0;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 3rem;
+    }
+    
+    .footer-column h3 {
+      font-size: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .footer-column ul {
+      list-style: none;
+    }
+    
+    .footer-column ul li {
+      margin-bottom: 0.75rem;
+    }
+    
+    .footer-column ul li a {
       color: var(--gray);
-      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column ul li a:hover {
+      color: white;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: var(--gray);
+      font-size: 0.875rem;
+    }
+    
+    @media (max-width: 768px) {
+      .about-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero h1 {
+        font-size: 2.25rem;
+      }
+      
+      .section-title {
+        font-size: 1.875rem;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="maintenance-container">
-    <div class="logo">Creative Agency Portfolio</div>
-    
-    <svg class="maintenance-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-    </svg>
-    
-    <h1>Site Under Maintenance</h1>
-    <p>Our site is currently being updated with new features and improvements. Please check back soon.</p>
-    
-    <div class="spinner"></div>
-    
-    <div class="footer">
-      &copy; 2025 Creative Agency Portfolio. All rights reserved.
+  <header>
+    <div class="container navbar">
+      <div class="logo">Creative Agency</div>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
-  </div>
+  </header>
+  
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h1>Creative Agency Portfolio</h1>
+        <p>We create exceptional digital experiences that transform brands and grow businesses.</p>
+        <a href="#contact" class="btn">Get Started</a>
+      </div>
+    </section>
+    
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">Our Services</h2>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>Web Design</h3>
+            <p>Beautiful, responsive websites tailored to your brand and business needs.</p>
+          </div>
+          <div class="service-card">
+            <h3>Web Development</h3>
+            <p>Custom web applications and systems built with the latest technologies.</p>
+          </div>
+          <div class="service-card">
+            <h3>Branding</h3>
+            <p>Comprehensive branding services including logo design and visual identity.</p>
+          </div>
+          <div class="service-card">
+            <h3>Digital Marketing</h3>
+            <p>Strategic marketing campaigns that increase your online visibility.</p>
+          </div>
+          <div class="service-card">
+            <h3>UI/UX Design</h3>
+            <p>User-centered design that creates meaningful and relevant experiences.</p>
+          </div>
+          <div class="service-card">
+            <h3>Content Creation</h3>
+            <p>Engaging content that connects with your audience across various platforms.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-content">
+          <div class="about-text">
+            <h2>Transforming Ideas into Digital Reality</h2>
+            <p>We are a team of passionate designers, developers, and strategists dedicated to delivering innovative solutions that help our clients succeed in the digital landscape.</p>
+            <p>With years of experience across various industries, we understand the challenges businesses face in today's competitive market. Our approach combines creativity with technical expertise to create custom solutions that address your unique needs.</p>
+          </div>
+          <div class="about-image">
+            <!-- This would be an image in the full site -->
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section id="contact" class="section">
+      <div class="container">
+        <h2 class="section-title">Contact Us</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+          <p>Ready to start your next project? Get in touch with our team today and let's create something amazing together.</p>
+          <p><strong>Email:</strong> info@creativeagency.com</p>
+          <p><strong>Phone:</strong> (123) 456-7890</p>
+          <p><strong>Address:</strong> 123 Creative Street, Design District, CA 94103</p>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>Creative Agency</h3>
+          <p>Creating digital experiences that matter.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Services</h3>
+          <ul>
+            <li><a href="#services">Web Design</a></li>
+            <li><a href="#services">Web Development</a></li>
+            <li><a href="#services">Branding</a></li>
+            <li><a href="#services">Digital Marketing</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Connect</h3>
+          <ul>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+            <li><a href="#">Instagram</a></li>
+            <li><a href="#">Facebook</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        &copy; 2025 Creative Agency Portfolio. All rights reserved.
+      </div>
+    </div>
+  </footer>
 </body>
 </html> 
