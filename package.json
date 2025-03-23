@@ -2,7 +2,7 @@
   "name": "my-v0-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://oaksfieldservices.com",
+  "homepage": "https://ekambara12.github.io/creative-agency-portfolio",
   "engines": {
     "node": ">=20.0.0"
   },
@@ -10,7 +10,9 @@
     "dev": "next dev",
     "prebuild": "node fix-tailwind.js",
     "build": "pnpm add @tailwindcss/postcss && next build",
-    "cloudflare:build": "pnpm add @tailwindcss/postcss && next build",
+    "export": "next export",
+    "predeploy": "npm run build && npm run export",
+    "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
   },
@@ -72,6 +74,7 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "gh-pages": "^6.1.1",
     "postcss": "^8",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
