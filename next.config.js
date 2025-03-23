@@ -1,12 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-  basePath: '/creative-agency-portfolio',
-  assetPrefix: '/creative-agency-portfolio/',
   images: {
     unoptimized: true,
   },
-  // Optional: Add trailingSlash for better compatibility with static hosting
+  basePath: process.env.NODE_ENV === 'production' ? '/creative-agency-portfolio' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/creative-agency-portfolio' : '',
   trailingSlash: true,
 }
 
