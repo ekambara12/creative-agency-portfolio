@@ -1,6 +1,6 @@
 # GitHub Pages deployment workflow
 
-name: Deploy Next.js site to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -30,11 +30,6 @@ jobs:
         with:
           node-version: "20"
           cache: npm
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-        with:
-          # Automatically inject basePath in your Next.js configuration file
-          static_site_generator: next
       - name: Install dependencies
         run: npm ci
       - name: Build with Next.js
