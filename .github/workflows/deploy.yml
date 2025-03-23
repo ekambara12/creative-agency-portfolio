@@ -15,6 +15,8 @@ permissions:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env:
+      NODE_ENV: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -32,10 +34,26 @@ jobs:
       - name: Install dependencies
         run: pnpm install
       
-      - name: Build
+      - name: Install tailwind postcss
+        run: pnpm add @tailwindcss/postcss
+        
+      - name: Print environment
         run: |
-          pnpm run prebuild
-          pnpm run build
+          echo "NODE_ENV: $NODE_ENV"
+          echo "GITHUB_REPOSITORY: $GITHUB_REPOSITORY"
+      
+      - name: Fix tailwind
+        run: node fix-tailwind.js
+        
+      - name: Build
+        run: pnpm next build
+      
+      - name: List output directory
+        run: |
+          echo "Contents of output directory:"
+          ls -la out
+          echo "Checking for index.html:"
+          find out -name "index.html"
       
       - name: Create .nojekyll file
         run: touch out/.nojekyll
@@ -44,4 +62,5 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: out
-          branch: gh-pages 
+          branch: gh-pages
+          clean: true 
