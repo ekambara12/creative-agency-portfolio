@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "next dev",
     "prebuild": "node fix-tailwind.js",
-    "build": "next build",
+    "build": "NODE_ENV=production next build",
+    "build:windows": "set NODE_ENV=production&& next build",
     "deploy": "gh-pages -d out",
     "start": "next start",
     "lint": "next lint"
