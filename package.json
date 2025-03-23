@@ -10,7 +10,6 @@
     "dev": "next dev",
     "prebuild": "node fix-tailwind.js",
     "build": "next build",
-    "export": "next export",
     "start": "next start",
     "lint": "next lint"
   },
