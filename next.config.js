@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
+  basePath: '/creative-agency-portfolio',
+  assetPrefix: '/creative-agency-portfolio/',
   images: {
     unoptimized: true,
   },
